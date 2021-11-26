@@ -1,0 +1,19 @@
+{
+    "name": "arifszn/laravel-advanced-validation",
+    "description": "Laravel advanced validation rules for real life scenario.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Arifszn\\LaravelAdvancedValidation\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ariful Alam",
+            "email": "swazan.arif@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
