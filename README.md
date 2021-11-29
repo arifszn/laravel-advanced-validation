@@ -28,8 +28,25 @@ php artisan vendor:publish --provider="Arifszn\AdvancedValidation\ServiceProvide
 
 ## Available Validation Rules
 
+- [`Base64String`](#base64_string)
 - [`Without Spaces`](#without-spaces)
 
+
+<a name="base64_string"></a>
+### `Base64String`
+
+The field under validation must be Base64 encoded string.
+
+```php
+use Arifszn\AdvancedValidation\Rules\Base64String;
+
+public function rules()
+{
+    return [
+        'foo' => [new Base64String()],
+    ];
+}
+```
 
 <a name="without-spaces"></a>
 ### `WithoutSpaces`
@@ -46,6 +63,7 @@ public function rules()
     ];
 }
 ```
+
 
 ## License
 
