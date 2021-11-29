@@ -64,6 +64,12 @@ public function rules()
 }
 ```
 
+## Testing
+
+```bash
+composer test
+```
+
 
 ## License
 
