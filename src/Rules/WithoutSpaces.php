@@ -31,6 +31,6 @@ class WithoutSpaces implements Rule
      */
     public function message()
     {
-        return 'The :attribute must not contain spaces.';
+        return trans('advancedValidation::validation.without_spaces');
     }
 }

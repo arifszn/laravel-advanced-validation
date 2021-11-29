@@ -1,6 +1,6 @@
 {
     "name": "arifszn/laravel-advanced-validation",
-    "description": "Laravel advanced validation rules for real-life scenarios..",
+    "description": "Laravel advanced validation rules for real-life scenarios.",
     "type": "library",
     "license": "MIT",
     "autoload": {
