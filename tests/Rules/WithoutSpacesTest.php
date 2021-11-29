@@ -10,7 +10,7 @@ class WithoutSpacesTest extends TestCase
     /**
      * @dataProvider provider
      */
-    public function testAdd($result, $value)
+    public function testValidation($result, $value)
     {
         $this->assertEquals($result, (new WithoutSpaces())->passes('foo', $value));
     }
