@@ -81,6 +81,32 @@ public function rules()
 }
 ```
 
+## Tips
+
+If you want to use the rules as strings and use them globally e.g. `'foo' => ['base64_string']`, you can do so by adding them to the boot method of your project's **AppServiceProvider**.
+
+```php
+<?php
+
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Validator;
+use Arifszn\AdvancedValidation\Rules\Base64String;
+
+class AppServiceProvider extends ServiceProvider
+{
+    public function boot()
+    {
+        Validator::extend(
+            'base64_string',
+            'Arifszn\AdvancedValidation\Rules\Base64String@passes',
+            (new Base64String())->message()
+        );
+    }
+}
+```
+
 ## Testing
 
 ```bash
