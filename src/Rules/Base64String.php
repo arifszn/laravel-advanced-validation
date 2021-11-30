@@ -11,7 +11,6 @@ use Illuminate\Contracts\Validation\Rule;
  */
 class Base64String implements Rule
 {
-    
     /**
      * Determine if the validation rule passes.
      *

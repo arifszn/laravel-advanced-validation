@@ -11,7 +11,6 @@ use Illuminate\Contracts\Validation\Rule;
  */
 class WithoutSpaces implements Rule
 {
-    
     /**
      * Determine if the validation rule passes.
      *

@@ -28,9 +28,26 @@ php artisan vendor:publish --provider="Arifszn\AdvancedValidation\ServiceProvide
 
 ## Available Validation Rules
 
-- [`Base64String`](#base64_string)
+- [`Base64 Image`](#base64_image)
+- [`Base64 String`](#base64_string)
 - [`Without Spaces`](#without-spaces)
 
+
+<a name="base64_image"></a>
+### `Base64Image`
+
+The field under validation must be Base64 encoded image.
+
+```php
+use Arifszn\AdvancedValidation\Rules\Base64Image;
+
+public function rules()
+{
+    return [
+        'avatar' => [new Base64Image()],
+    ];
+}
+```
 
 <a name="base64_string"></a>
 ### `Base64String`
