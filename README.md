@@ -149,6 +149,15 @@ class AppServiceProvider extends ServiceProvider
 composer test
 ```
 
+## Contributing
+
+Any contributors who want to make this project better can make contributions, which will be greatly appreciated. To contribute, clone this repo locally and commit your code to a new branch. Feel free to create an issue or make a pull request.
+
+
+## Support
+
+If you are using this package and happy with it or just want to encourage me to continue creating stuff, you can do it by just starring and sharing the project.
+
 
 ## License
 
