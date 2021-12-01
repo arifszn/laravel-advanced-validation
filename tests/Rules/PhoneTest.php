@@ -19,6 +19,8 @@ class PhoneTest extends TestCase
     {
         return [
             [true, '+1-202-555-0125'],
+            [true, '(508) 555-0125'],
+            [true, '5085550125'],
             [true, '+12025550125'],
             [true, '2025550125'],
             [false, '2025@550125'],

@@ -27,7 +27,7 @@ php artisan vendor:publish --provider="Arifszn\AdvancedValidation\ServiceProvide
 
 ## Custom Error Message
 
-Additionally, you can specify the error message on the fly when declaring the rules. Simple pass the message as the first parameter.
+Additionally, you can specify the error message on the fly when declaring the rules. Simple pass the message parameter.
 
 ```php
 use Arifszn\AdvancedValidation\Rules\Base64Image;
@@ -84,6 +84,11 @@ public function rules()
 ### `Phone`
 
 The field under validation must be a valid phone number.
+
+✓ +1-202-555-0125 \
+✓ +12025550125 \
+✓ (508) 555-0125 \
+✓ 5085550125
 
 ```php
 use Arifszn\AdvancedValidation\Rules\Phone;
