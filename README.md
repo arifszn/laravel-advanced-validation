@@ -25,6 +25,20 @@ If you wish to edit the package translations, you can run the following command 
 php artisan vendor:publish --provider="Arifszn\AdvancedValidation\ServiceProvider"
 ```
 
+## Custom Error Message
+
+Additionally, you can specify the error message on the fly when declaring the rules. Simple pass the message as the first parameter.
+
+```php
+use Arifszn\AdvancedValidation\Rules\Base64Image;
+
+public function rules()
+{
+    return [
+        'avatar' => [new Base64Image('Your custom message')],
+    ];
+}
+```
 
 ## Available Validation Rules
 

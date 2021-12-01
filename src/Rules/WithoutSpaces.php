@@ -12,6 +12,22 @@ use Illuminate\Contracts\Validation\Rule;
 class WithoutSpaces implements Rule
 {
     /**
+     * @var string
+     */
+    private $message;
+
+    /**
+     * Create a new rule instance.
+     *
+     * @param string $message   Custom error message.
+     * @return void
+     */
+    public function __construct(string $message = null)
+    {
+        $this->message = $message ? $message : trans('advancedValidation::validation.without_spaces');
+    }
+
+    /**
      * Determine if the validation rule passes.
      *
      * @param string $attribute
@@ -30,6 +46,6 @@ class WithoutSpaces implements Rule
      */
     public function message()
     {
-        return trans('advancedValidation::validation.without_spaces');
+        return $this->message;
     }
 }
