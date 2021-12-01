@@ -44,6 +44,7 @@ public function rules()
 
 - [`Base64 Image`](#base64_image)
 - [`Base64 String`](#base64_string)
+- [`Phone`](#phone)
 - [`Without Spaces`](#without-spaces)
 
 
@@ -75,6 +76,22 @@ public function rules()
 {
     return [
         'foo' => [new Base64String()],
+    ];
+}
+```
+
+<a name="phone"></a>
+### `Phone`
+
+The field under validation must be a valid phone number.
+
+```php
+use Arifszn\AdvancedValidation\Rules\Phone;
+
+public function rules()
+{
+    return [
+        'phone' => [new Phone()],
     ];
 }
 ```
