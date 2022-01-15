@@ -49,7 +49,7 @@ public function rules()
 
 
 <a name="base64_image"></a>
-### `Base64Image`
+### `Base64Image(string $message = null)`
 
 The field under validation must be Base64 encoded image.
 
@@ -65,7 +65,7 @@ public function rules()
 ```
 
 <a name="base64_string"></a>
-### `Base64String`
+### `Base64String(string $message = null)`
 
 The field under validation must be Base64 encoded string.
 
@@ -81,7 +81,7 @@ public function rules()
 ```
 
 <a name="phone"></a>
-### `Phone`
+### `Phone(string $message = null)`
 
 The field under validation must be a valid phone number.
 
@@ -102,7 +102,7 @@ public function rules()
 ```
 
 <a name="without-spaces"></a>
-### `WithoutSpaces`
+### `WithoutSpaces(string $message = null)`
 
 The field under validation must not contain spaces.
 
