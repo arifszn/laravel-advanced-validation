@@ -44,6 +44,7 @@ public function rules()
 
 - [`Base64 Image`](#base64_image)
 - [`Base64 String`](#base64_string)
+- [`Image URL`](#image_url)
 - [`Phone`](#phone)
 - [`Without Spaces`](#without-spaces)
 
@@ -76,6 +77,25 @@ public function rules()
 {
     return [
         'foo' => [new Base64String()],
+    ];
+}
+```
+
+<a name="image_url"></a>
+### `ImageURL(string $message = null)`
+
+The field under validation must be a valid image URL.
+
+✓ https://www.php.net/images/logos/php-logo.png \
+✕ https://imaginarysite123.com/invalid.png
+
+```php
+use Arifszn\AdvancedValidation\Rules\ImageURL;
+
+public function rules()
+{
+    return [
+        'avatar' => [new ImageURL()],
     ];
 }
 ```
