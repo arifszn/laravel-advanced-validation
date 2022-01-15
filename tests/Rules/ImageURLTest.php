@@ -18,8 +18,8 @@ class ImageURLTest extends TestCase
     public function provider()
     {
         return [
-            [true, 'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'],
-            [false, 'https://www.google.com/images/branding/googlelogo'],
+            [true, 'https://www.php.net/images/logos/php-logo.png'],
+            [false, 'https://imaginarysite123.com/invalid.png'],
             [false, '123'],
             [false, 'abc'],
             [false, ''],
