@@ -42,12 +42,29 @@ public function rules()
 
 ## Available Validation Rules
 
+- [`Ascii`](#ascii)
 - [`Base64 Image`](#base64_image)
 - [`Base64 String`](#base64_string)
 - [`Image URL`](#image_url)
 - [`Phone`](#phone)
 - [`Without Spaces`](#without-spaces)
 
+
+<a name="ascii"></a>
+### `Ascii(string $message = null)`
+
+The field under validation must contain ASCII chars only.
+
+```php
+use Arifszn\AdvancedValidation\Rules\Ascii;
+
+public function rules()
+{
+    return [
+        'foo' => [new Ascii()],
+    ];
+}
+```
 
 <a name="base64_image"></a>
 ### `Base64Image(string $message = null)`
