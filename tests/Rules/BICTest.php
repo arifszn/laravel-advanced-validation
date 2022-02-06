@@ -28,6 +28,7 @@ class BICTest extends TestCase
             [false, 'SBICKENXX9'],
             [false, 'SBICKEN13458'],
             [false, 'SBICKEN'],
+            [false, 'SBICKXX'],
         ];
     }
 }
