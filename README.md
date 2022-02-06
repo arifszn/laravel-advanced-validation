@@ -45,6 +45,7 @@ public function rules()
 - [`Ascii`](#ascii)
 - [`Base64 Image`](#base64_image)
 - [`Base64 String`](#base64_string)
+- [`BIC`](#bic)
 - [`Image URL`](#image_url)
 - [`Phone`](#phone)
 - [`Without Spaces`](#without-spaces)
@@ -94,6 +95,22 @@ public function rules()
 {
     return [
         'foo' => [new Base64String()],
+    ];
+}
+```
+
+<a name="bic"></a>
+### `BIC(string $message = null)`
+
+The field under validation must be a BIC or SWIFT code.
+
+```php
+use Arifszn\AdvancedValidation\Rules\BIC;
+
+public function rules()
+{
+    return [
+        'foo' => [new BIC()],
     ];
 }
 ```
