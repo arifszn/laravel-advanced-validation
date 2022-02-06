@@ -6,7 +6,7 @@ use Illuminate\Contracts\Validation\Rule;
 use Arifszn\AdvancedValidation\Lib\ValidISO31661Alpha2CountriesCodes;
 
 /**
- * The field under validation must be a BIC (Bank Identification Code) or SWIFT code.
+ * The field under validation must be a BIC(Business Identifier Code) or SWIFT code.
  *
  * @package Arifszn\AdvancedValidation\Rules
  */

@@ -102,7 +102,7 @@ public function rules()
 <a name="bic"></a>
 ### `BIC(string $message = null)`
 
-The field under validation must be a BIC or SWIFT code.
+The field under validation must be a BIC([Business Identifier Code](https://en.wikipedia.org/wiki/ISO_9362)) or SWIFT code.
 
 ```php
 use Arifszn\AdvancedValidation\Rules\BIC;
