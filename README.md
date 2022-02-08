@@ -47,6 +47,7 @@ public function rules()
 - [`Base64 String`](#base64_string)
 - [`BIC`](#bic)
 - [`Btc Address`](#btc_address)
+- [`Credit Card`](#credit_card)
 - [`Image URL`](#image_url)
 - [`Phone`](#phone)
 - [`Without Spaces`](#without-spaces)
@@ -128,6 +129,22 @@ public function rules()
 {
     return [
         'foo' => [new BtcAddress()],
+    ];
+}
+```
+
+<a name="credit_card"></a>
+### `CreditCard(string $message = null)`
+
+The field under validation must be a valid credit card number.
+
+```php
+use Arifszn\AdvancedValidation\Rules\CreditCard;
+
+public function rules()
+{
+    return [
+        'foo' => [new CreditCard()],
     ];
 }
 ```
