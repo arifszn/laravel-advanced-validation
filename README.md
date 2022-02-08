@@ -46,6 +46,7 @@ public function rules()
 - [`Base64 Image`](#base64_image)
 - [`Base64 String`](#base64_string)
 - [`BIC`](#bic)
+- [`Btc Address`](#btc_address)
 - [`Image URL`](#image_url)
 - [`Phone`](#phone)
 - [`Without Spaces`](#without-spaces)
@@ -111,6 +112,22 @@ public function rules()
 {
     return [
         'foo' => [new BIC()],
+    ];
+}
+```
+
+<a name="btc_address"></a>
+### `BtcAddress(string $message = null)`
+
+The field under validation must be a valid BTC address.
+
+```php
+use Arifszn\AdvancedValidation\Rules\BtcAddress;
+
+public function rules()
+{
+    return [
+        'foo' => [new BtcAddress()],
     ];
 }
 ```
