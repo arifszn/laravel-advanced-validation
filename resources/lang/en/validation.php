@@ -6,6 +6,7 @@ return [
     'base64_image' => 'The :attribute is not valid Base64 encoded image.',
     'base64_string' => 'The :attribute is not valid Base64 encoded string.',
     'bic' => 'The :attribute must be a BIC or SWIFT code.',
+    'btc_address' => 'The :attribute must be a valid BTC address.',
     'image_url' => 'The :attribute must be a valid image URL.',
     'phone' => 'The :attribute must be a valid phone number.',
     'without_spaces' => 'The :attribute must not contain spaces.',
