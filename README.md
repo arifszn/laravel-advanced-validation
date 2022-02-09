@@ -48,6 +48,7 @@ public function rules()
 - [`BIC`](#bic)
 - [`Btc Address`](#btc_address)
 - [`Credit Card`](#credit_card)
+- [`Data URI`](#data_uri)
 - [`Image URL`](#image_url)
 - [`Phone`](#phone)
 - [`Without Spaces`](#without-spaces)
@@ -145,6 +146,22 @@ public function rules()
 {
     return [
         'foo' => [new CreditCard()],
+    ];
+}
+```
+
+<a name="data_uri"></a>
+### `DataURI(string $message = null)`
+
+The field under validation must have [data uri format](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs).
+
+```php
+use Arifszn\AdvancedValidation\Rules\DataURI;
+
+public function rules()
+{
+    return [
+        'foo' => [new DataURI()],
     ];
 }
 ```
