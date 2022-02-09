@@ -14,17 +14,17 @@ class WithoutSpaces implements Rule
     /**
      * @var string
      */
-    private $message;
+    private $errorMessage;
 
     /**
      * Create a new rule instance.
      *
-     * @param string $message   Custom error message.
+     * @param string $errorMessage   Custom error message.
      * @return void
      */
-    public function __construct(string $message = null)
+    public function __construct(string $errorMessage = null)
     {
-        $this->message = $message ? $message : trans('advancedValidation::validation.without_spaces');
+        $this->errorMessage = $errorMessage ? $errorMessage : trans('advancedValidation::validation.without_spaces');
     }
 
     /**
@@ -46,6 +46,6 @@ class WithoutSpaces implements Rule
      */
     public function message()
     {
-        return $this->message;
+        return $this->errorMessage;
     }
 }

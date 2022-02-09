@@ -55,7 +55,7 @@ public function rules()
 
 
 <a name="ascii"></a>
-### `Ascii(string $message = null)`
+### `Ascii(string $errorMessage = null)`
 
 The field under validation must contain ASCII chars only.
 
@@ -71,7 +71,7 @@ public function rules()
 ```
 
 <a name="base64_image"></a>
-### `Base64Image(string $message = null)`
+### `Base64Image(string $errorMessage = null)`
 
 The field under validation must be Base64 encoded image.
 
@@ -87,7 +87,7 @@ public function rules()
 ```
 
 <a name="base64_string"></a>
-### `Base64String(string $message = null)`
+### `Base64String(string $errorMessage = null)`
 
 The field under validation must be Base64 encoded string.
 
@@ -103,7 +103,7 @@ public function rules()
 ```
 
 <a name="bic"></a>
-### `BIC(string $message = null)`
+### `BIC(string $errorMessage = null)`
 
 The field under validation must be a BIC([Business Identifier Code](https://en.wikipedia.org/wiki/ISO_9362)) or SWIFT code.
 
@@ -119,7 +119,7 @@ public function rules()
 ```
 
 <a name="btc_address"></a>
-### `BtcAddress(string $message = null)`
+### `BtcAddress(string $errorMessage = null)`
 
 The field under validation must be a valid BTC address.
 
@@ -135,7 +135,7 @@ public function rules()
 ```
 
 <a name="credit_card"></a>
-### `CreditCard(string $message = null)`
+### `CreditCard(string $errorMessage = null)`
 
 The field under validation must be a valid credit card number.
 
@@ -151,7 +151,7 @@ public function rules()
 ```
 
 <a name="data_uri"></a>
-### `DataURI(string $message = null)`
+### `DataURI(string $errorMessage = null)`
 
 The field under validation must have [data uri format](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs).
 
@@ -167,7 +167,7 @@ public function rules()
 ```
 
 <a name="image_url"></a>
-### `ImageURL(string $message = null)`
+### `ImageURL(string $errorMessage = null)`
 
 The field under validation must be a valid image URL.
 
@@ -186,7 +186,7 @@ public function rules()
 ```
 
 <a name="phone"></a>
-### `Phone(string $message = null)`
+### `Phone(string $errorMessage = null)`
 
 The field under validation must be a valid phone number.
 
@@ -207,7 +207,7 @@ public function rules()
 ```
 
 <a name="without-spaces"></a>
-### `WithoutSpaces(string $message = null)`
+### `WithoutSpaces(string $errorMessage = null)`
 
 The field under validation must not contain spaces.
 

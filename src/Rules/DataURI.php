@@ -14,17 +14,17 @@ class DataURI implements Rule
     /**
      * @var string
      */
-    private $message;
+    private $errorMessage;
 
     /**
      * Create a new rule instance.
      *
-     * @param string $message   Custom error message.
+     * @param string $errorMessage   Custom error message.
      * @return void
      */
-    public function __construct(string $message = null)
+    public function __construct(string $errorMessage = null)
     {
-        $this->message = $message ? $message : trans('advancedValidation::validation.data_uri');
+        $this->errorMessage = $errorMessage ? $errorMessage : trans('advancedValidation::validation.data_uri');
     }
 
     /**
@@ -87,6 +87,6 @@ class DataURI implements Rule
      */
     public function message()
     {
-        return $this->message;
+        return $this->errorMessage;
     }
 }
