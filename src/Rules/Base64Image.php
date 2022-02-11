@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\File;
 
 /**
- * The field under validation must be Base64 encoded image.
+ * The field under validation must be a Base64 encoded image.
  *
  * @package Arifszn\AdvancedValidation\Rules
  */

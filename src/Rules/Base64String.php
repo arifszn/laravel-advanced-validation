@@ -5,7 +5,7 @@ namespace Arifszn\AdvancedValidation\Rules;
 use Illuminate\Contracts\Validation\Rule;
 
 /**
- * The field under validation must be Base64 encoded string.
+ * The field under validation must be a Base64 encoded string.
  *
  * @package Arifszn\AdvancedValidation\Rules
  */
