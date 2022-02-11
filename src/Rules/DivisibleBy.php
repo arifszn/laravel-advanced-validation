@@ -6,7 +6,7 @@ use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
 
 /**
- * The field under validation must be divisible by another.
+ * The field under validation must be divisible by the given number.
  *
  * @package Arifszn\AdvancedValidation\Rules
  */

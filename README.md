@@ -49,6 +49,7 @@ public function rules()
 - [`Btc Address`](#btcaddress)
 - [`Credit Card`](#creditcard)
 - [`Data URI`](#datauri)
+- [`Divisible By`](#divisibleby)
 - [`Float Number`](#floatnumber)
 - [`Image URL`](#imageurl)
 - [`Phone`](#phone)
@@ -156,6 +157,21 @@ public function rules()
 {
     return [
         'foo' => [new DataURI()],
+    ];
+}
+```
+
+### `DivisibleBy`
+
+The field under validation must be divisible by the given number.
+
+```php
+use Arifszn\AdvancedValidation\Rules\DivisibleBy;
+
+public function rules()
+{
+    return [
+        'foo' => [new DivisibleBy(2)],
     ];
 }
 ```
