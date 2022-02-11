@@ -50,7 +50,7 @@ class DivisibleBy implements Rule
     {
         $this->attribute = $attribute;
 
-        return (floatval($value) !== 0.0) && (floatval($value) % intval($this->number, 10) === 0);
+        return (floatval($value) !== 0.0) && (fmod(floatval($value), intval($this->number, 10)) === 0.0);
     }
 
     /**

@@ -55,7 +55,7 @@ class CreditCard implements Rule
                 $tmpNum *= 2;
                 
                 if ($tmpNum >= 10) {
-                    $sum += (($tmpNum % 10) + 1);
+                    $sum += (fmod($tmpNum, 10) + 1);
                 } else {
                     $sum += $tmpNum;
                 }
@@ -66,7 +66,7 @@ class CreditCard implements Rule
             $shouldDouble = !$shouldDouble;
         }
 
-        return !!(($sum % 10) === 0 ? true : false);
+        return !!(fmod($sum, 10) === 0.0 ? true : false);
     }
 
     /**
