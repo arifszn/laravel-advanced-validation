@@ -38,7 +38,7 @@ class FloatNumber implements Rule
     {
         $regex = '/^(?:[-+])?(?:[0-9]+)?(?:\\.[0-9]*)?(?:[eE][\\+\\-]?(?:[0-9]+))?$/';
 
-        if ($value === '' || $value === '.' || $value === '-' || $value === '+') {
+        if (!$value || $value === '.' || $value === '-' || $value === '+') {
             return false;
         }
 

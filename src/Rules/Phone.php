@@ -19,12 +19,12 @@ class Phone implements Rule
     /**
      * Create a new rule instance.
      *
-     * @param string $errorMessage   Custom error message.
+     * @param string|null $errorMessage   Custom error message.
      * @return void
      */
     public function __construct(string $errorMessage = null)
     {
-        $this->errorMessage = $errorMessage ? $errorMessage : trans('advancedValidation::validation.phone');
+        $this->errorMessage = $errorMessage;
     }
 
     /**
@@ -46,6 +46,6 @@ class Phone implements Rule
      */
     public function message()
     {
-        return $this->errorMessage;
+        return $this->errorMessage ? $this->errorMessage : trans('advancedValidation::validation.phone');
     }
 }

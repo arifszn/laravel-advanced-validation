@@ -19,12 +19,12 @@ class CreditCard implements Rule
     /**
      * Create a new rule instance.
      *
-     * @param string $errorMessage   Custom error message.
+     * @param string|null $errorMessage   Custom error message.
      * @return void
      */
     public function __construct(string $errorMessage = null)
     {
-        $this->errorMessage = $errorMessage ? $errorMessage : trans('advancedValidation::validation.credit_card');
+        $this->errorMessage = $errorMessage;
     }
 
     /**
@@ -55,7 +55,7 @@ class CreditCard implements Rule
                 $tmpNum *= 2;
                 
                 if ($tmpNum >= 10) {
-                    $sum += (($tmpNum % 10) + 1);
+                    $sum += (fmod($tmpNum, 10) + 1);
                 } else {
                     $sum += $tmpNum;
                 }
@@ -66,7 +66,7 @@ class CreditCard implements Rule
             $shouldDouble = !$shouldDouble;
         }
 
-        return !!(($sum % 10) === 0 ? true : false);
+        return !!(fmod($sum, 10) === 0.0 ? true : false);
     }
 
     /**
@@ -76,6 +76,6 @@ class CreditCard implements Rule
      */
     public function message()
     {
-        return $this->errorMessage;
+        return $this->errorMessage ? $this->errorMessage : trans('advancedValidation::validation.credit_card');
     }
 }
