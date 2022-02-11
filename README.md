@@ -43,15 +43,15 @@ public function rules()
 ## Available Validation Rules
 
 - [`Ascii`](#ascii)
-- [`Base64 Image`](#base64Image)
-- [`Base64 String`](#base64String)
+- [`Base64 Image`](#base64image)
+- [`Base64 String`](#base64string)
 - [`BIC`](#bic)
-- [`Btc Address`](#btcAddress)
-- [`Credit Card`](#creditCard)
-- [`Data URI`](#dataUri)
-- [`Image URL`](#imageUrl)
+- [`Btc Address`](#btcaddress)
+- [`Credit Card`](#creditcard)
+- [`Data URI`](#datauri)
+- [`Image URL`](#imageurl)
 - [`Phone`](#phone)
-- [`Without Spaces`](#withoutSpaces)
+- [`Without Spaces`](#withoutspaces)
 
 
 ### `Ascii`
