@@ -3,6 +3,7 @@
 namespace Arifszn\AdvancedValidation\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
+use Illuminate\Support\Facades\Validator;
 
 /**
  * The field under validation must be divisible by another.
@@ -50,7 +51,12 @@ class DivisibleBy implements Rule
     {
         $this->attribute = $attribute;
 
-        return (floatval($value) !== 0.0) && (fmod(floatval($value), intval($this->number, 10)) === 0.0);
+        $floatValidation = Validator::make(
+            ['float' => $value],
+            ['float' => ['required', new FloatNumber()]],
+        );
+
+        return !$floatValidation->fails() && (fmod(floatval($value), intval($this->number, 10)) === 0.0);
     }
 
     /**
