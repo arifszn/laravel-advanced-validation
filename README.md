@@ -50,6 +50,7 @@ public function rules()
 - [`Credit Card`](#creditcard)
 - [`Data URI`](#datauri)
 - [`Divisible By`](#divisibleby)
+- [`Ethereum Address`](#ethereumaddress)
 - [`Float Number`](#floatnumber)
 - [`Image URL`](#imageurl)
 - [`Phone`](#phone)
@@ -176,6 +177,20 @@ public function rules()
 }
 ```
 
+### `EthereumAddress`
+The field under validation must be an [Ethereum](https://ethereum.org/en/) address. Does not validate address checksums.
+
+```php
+use Arifszn\AdvancedValidation\Rules\EthereumAddress;
+
+public function rules()
+{
+    return [
+        'foo' => [new EthereumAddress()],
+    ];
+}
+```
+
 ### `FloatNumber`
 
 The field under validation must be a float number.
@@ -279,6 +294,11 @@ composer test
 ## Contributing
 
 Any contributors who want to make this project better can make contributions, which will be greatly appreciated. To contribute, clone this repo locally and commit your code to a new branch. Feel free to create an issue or make a pull request.
+
+
+## Credits
+
+- [validator.js](https://github.com/validatorjs/validator.js)
 
 
 ## Support
