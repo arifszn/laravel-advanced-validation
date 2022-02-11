@@ -24,7 +24,7 @@ class WithoutSpaces implements Rule
      */
     public function __construct(string $errorMessage = null)
     {
-        $this->errorMessage = $errorMessage ? $errorMessage : trans('advancedValidation::validation.without_spaces');
+        $this->errorMessage = $errorMessage;
     }
 
     /**
@@ -46,6 +46,6 @@ class WithoutSpaces implements Rule
      */
     public function message()
     {
-        return $this->errorMessage;
+        return $this->errorMessage ? $this->errorMessage : trans('advancedValidation::validation.without_spaces');
     }
 }

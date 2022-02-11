@@ -26,7 +26,7 @@ class ImageURL implements Rule
      */
     public function __construct(string $errorMessage = null)
     {
-        $this->errorMessage = $errorMessage ? $errorMessage : trans('advancedValidation::validation.image_url');
+        $this->errorMessage = $errorMessage;
     }
 
     /**
@@ -60,6 +60,6 @@ class ImageURL implements Rule
      */
     public function message()
     {
-        return $this->errorMessage;
+        return $this->errorMessage ? $this->errorMessage : trans('advancedValidation::validation.image_url');
     }
 }

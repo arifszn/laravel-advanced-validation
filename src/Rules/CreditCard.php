@@ -24,7 +24,7 @@ class CreditCard implements Rule
      */
     public function __construct(string $errorMessage = null)
     {
-        $this->errorMessage = $errorMessage ? $errorMessage : trans('advancedValidation::validation.credit_card');
+        $this->errorMessage = $errorMessage;
     }
 
     /**
@@ -76,6 +76,6 @@ class CreditCard implements Rule
      */
     public function message()
     {
-        return $this->errorMessage;
+        return $this->errorMessage ? $this->errorMessage : trans('advancedValidation::validation.credit_card');
     }
 }
