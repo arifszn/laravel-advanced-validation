@@ -9,6 +9,7 @@ return [
     'btc_address' => 'The :attribute must be a valid BTC address.',
     'credit_card' => 'The :attribute must be a valid credit card number.',
     'data_uri' => 'The :attribute must have data uri format.',
+    'float_number' => 'The :attribute must be a float number',
     'image_url' => 'The :attribute must be a valid image URL.',
     'phone' => 'The :attribute must be a valid phone number.',
     'without_spaces' => 'The :attribute must not contain spaces.',
