@@ -50,6 +50,7 @@ public function rules()
 - [`Credit Card`](#creditcard)
 - [`Data URI`](#datauri)
 - [`Divisible By`](#divisibleby)
+- [`Ethereum Address`](#ethereumaddress)
 - [`Float Number`](#floatnumber)
 - [`Image URL`](#imageurl)
 - [`Phone`](#phone)
@@ -172,6 +173,20 @@ public function rules()
 {
     return [
         'foo' => [new DivisibleBy(2)],
+    ];
+}
+```
+
+### `EthereumAddress`
+The field under validation must be an [Ethereum](https://ethereum.org/en/) address. Does not validate address checksums.
+
+```php
+use Arifszn\AdvancedValidation\Rules\EthereumAddress;
+
+public function rules()
+{
+    return [
+        'foo' => [new EthereumAddress()],
     ];
 }
 ```
