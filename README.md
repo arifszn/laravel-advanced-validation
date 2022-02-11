@@ -49,6 +49,7 @@ public function rules()
 - [`Btc Address`](#btcaddress)
 - [`Credit Card`](#creditcard)
 - [`Data URI`](#datauri)
+- [`Float Number`](#floatnumber)
 - [`Image URL`](#imageurl)
 - [`Phone`](#phone)
 - [`Without Spaces`](#withoutspaces)
@@ -155,6 +156,21 @@ public function rules()
 {
     return [
         'foo' => [new DataURI()],
+    ];
+}
+```
+
+### `FloatNumber`
+
+The field under validation must be a float number.
+
+```php
+use Arifszn\AdvancedValidation\Rules\FloatNumber;
+
+public function rules()
+{
+    return [
+        'foo' => [new FloatNumber()],
     ];
 }
 ```
