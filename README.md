@@ -27,7 +27,7 @@ php artisan vendor:publish --provider="Arifszn\AdvancedValidation\ServiceProvide
 
 ## Custom Error Message
 
-Additionally, you can specify the error message on the fly when declaring the rules. Simple pass the message parameter.
+You can specify the error message on the fly when declaring the rules. Simple pass the error message parameter.
 
 ```php
 use Arifszn\AdvancedValidation\Rules\Base64Image;
@@ -35,7 +35,7 @@ use Arifszn\AdvancedValidation\Rules\Base64Image;
 public function rules()
 {
     return [
-        'avatar' => [new Base64Image('Your custom message')],
+        'avatar' => [new Base64Image('Your custom error message')],
     ];
 }
 ```
@@ -43,19 +43,18 @@ public function rules()
 ## Available Validation Rules
 
 - [`Ascii`](#ascii)
-- [`Base64 Image`](#base64_image)
-- [`Base64 String`](#base64_string)
+- [`Base64 Image`](#base64Image)
+- [`Base64 String`](#base64String)
 - [`BIC`](#bic)
-- [`Btc Address`](#btc_address)
-- [`Credit Card`](#credit_card)
-- [`Data URI`](#data_uri)
-- [`Image URL`](#image_url)
+- [`Btc Address`](#btcAddress)
+- [`Credit Card`](#creditCard)
+- [`Data URI`](#dataUri)
+- [`Image URL`](#imageUrl)
 - [`Phone`](#phone)
-- [`Without Spaces`](#without-spaces)
+- [`Without Spaces`](#withoutSpaces)
 
 
-<a name="ascii"></a>
-### `Ascii(string $errorMessage = null)`
+### `Ascii`
 
 The field under validation must contain ASCII chars only.
 
@@ -70,10 +69,9 @@ public function rules()
 }
 ```
 
-<a name="base64_image"></a>
-### `Base64Image(string $errorMessage = null)`
+### `Base64Image`
 
-The field under validation must be Base64 encoded image.
+The field under validation must be a Base64 encoded image.
 
 ```php
 use Arifszn\AdvancedValidation\Rules\Base64Image;
@@ -86,10 +84,9 @@ public function rules()
 }
 ```
 
-<a name="base64_string"></a>
-### `Base64String(string $errorMessage = null)`
+### `Base64String`
 
-The field under validation must be Base64 encoded string.
+The field under validation must be a Base64 encoded string.
 
 ```php
 use Arifszn\AdvancedValidation\Rules\Base64String;
@@ -102,8 +99,7 @@ public function rules()
 }
 ```
 
-<a name="bic"></a>
-### `BIC(string $errorMessage = null)`
+### `BIC`
 
 The field under validation must be a BIC([Business Identifier Code](https://en.wikipedia.org/wiki/ISO_9362)) or SWIFT code.
 
@@ -118,8 +114,7 @@ public function rules()
 }
 ```
 
-<a name="btc_address"></a>
-### `BtcAddress(string $errorMessage = null)`
+### `BtcAddress`
 
 The field under validation must be a valid BTC address.
 
@@ -134,8 +129,7 @@ public function rules()
 }
 ```
 
-<a name="credit_card"></a>
-### `CreditCard(string $errorMessage = null)`
+### `CreditCard`
 
 The field under validation must be a valid credit card number.
 
@@ -150,8 +144,7 @@ public function rules()
 }
 ```
 
-<a name="data_uri"></a>
-### `DataURI(string $errorMessage = null)`
+### `DataURI`
 
 The field under validation must have [data uri format](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs).
 
@@ -166,8 +159,7 @@ public function rules()
 }
 ```
 
-<a name="image_url"></a>
-### `ImageURL(string $errorMessage = null)`
+### `ImageURL`
 
 The field under validation must be a valid image URL.
 
@@ -185,15 +177,14 @@ public function rules()
 }
 ```
 
-<a name="phone"></a>
-### `Phone(string $errorMessage = null)`
+### `Phone`
 
 The field under validation must be a valid phone number.
 
-✓ +1-202-555-0125 \
-✓ +12025550125 \
-✓ (508) 555-0125 \
-✓ 5085550125
+✓ +x-xxx-xxx-xxxx \
+✓ +xxxxxxxxxxx \
+✓ (xxx) xxx-xxxx \
+✓ xxxxxxxxxx
 
 ```php
 use Arifszn\AdvancedValidation\Rules\Phone;
@@ -201,13 +192,12 @@ use Arifszn\AdvancedValidation\Rules\Phone;
 public function rules()
 {
     return [
-        'phone' => [new Phone()],
+        'foo' => [new Phone()],
     ];
 }
 ```
 
-<a name="without-spaces"></a>
-### `WithoutSpaces(string $errorMessage = null)`
+### `WithoutSpaces`
 
 The field under validation must not contain spaces.
 
@@ -224,7 +214,7 @@ public function rules()
 
 ## Tips
 
-If you want to use the rules as strings and use them globally e.g. `'foo' => ['base64_string']`, you can do so by adding them to the boot method of your project's **AppServiceProvider**.
+If you want to use the rules as strings and use them globally e.g. `'foo' => ['phone']`, you can do so by adding them to the boot method of your project's **AppServiceProvider**.
 
 ```php
 <?php
@@ -233,16 +223,16 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Validator;
-use Arifszn\AdvancedValidation\Rules\Base64String;
+use Arifszn\AdvancedValidation\Rules\Phone;
 
 class AppServiceProvider extends ServiceProvider
 {
     public function boot()
     {
         Validator::extend(
-            'base64_string',
-            'Arifszn\AdvancedValidation\Rules\Base64String@passes',
-            (new Base64String())->message()
+            'phone',
+            'Arifszn\AdvancedValidation\Rules\Phone@passes',
+            (new Phone())->message()
         );
     }
 }
