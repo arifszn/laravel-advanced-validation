@@ -37,5 +37,23 @@
     },
     "scripts": {
         "test": "phpunit"
-    }
+    },
+    "keywords": [
+        "laravel",
+        "validation",
+        "validator",
+        "laravel-framework",
+        "laravel-package",
+        "laravel-validation",
+        "validation-library",
+        "validation-rules",
+        "laravel-validation-rules",
+        "validation-tool",
+        "laravel-validator",
+        "laravel-rule",
+        "laravel-ruleset",
+        "laravel-validation-message",
+        "laravel-validation-library",
+        "laravel-advanced-validation"
+    ]
 }
