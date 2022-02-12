@@ -52,6 +52,7 @@ public function rules()
 - [`Divisible By`](#divisibleby)
 - [`Ethereum Address`](#ethereumaddress)
 - [`Float Number`](#floatnumber)
+- [`Hash`](#hash)
 - [`Image URL`](#imageurl)
 - [`Phone`](#phone)
 - [`Without Spaces`](#withoutspaces)
@@ -202,6 +203,23 @@ public function rules()
 {
     return [
         'foo' => [new FloatNumber()],
+    ];
+}
+```
+
+### `Hash`
+
+The field under validation must be a hash of type algorithm.
+
+Algorithm is one of `'md4', 'md5', 'sha1', 'sha256', 'sha384', 'sha512', 'ripemd128', 'ripemd160', 'tiger128', 'tiger160', 'tiger192', 'crc32', 'crc32b'`.
+
+```php
+use Arifszn\AdvancedValidation\Rules\Hash;
+
+public function rules()
+{
+    return [
+        'foo' => [new Hash()],
     ];
 }
 ```
