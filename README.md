@@ -219,7 +219,7 @@ use Arifszn\AdvancedValidation\Rules\Hash;
 public function rules()
 {
     return [
-        'foo' => [new Hash()],
+        'foo' => [new Hash('md4')],
     ];
 }
 ```
