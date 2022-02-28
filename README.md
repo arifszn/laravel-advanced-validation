@@ -54,6 +54,7 @@ public function rules()
 - [`Float Number`](#floatnumber)
 - [`Image URL`](#imageurl)
 - [`Phone`](#phone)
+- [`Username`](#username)
 - [`Without Spaces`](#withoutspaces)
 
 
@@ -240,6 +241,26 @@ public function rules()
 {
     return [
         'foo' => [new Phone()],
+    ];
+}
+```
+
+### `Username`
+
+The field under validation must be a valid username.
+
+- starts with a letter (alpha)
+- only alpha-numeric (a-z, A-Z, 0-9), underscore, minus and dot
+- multiple underscores, minus and are not allowed (-- or __ or ..)
+- underscores, minus and dot are not allowed at the beginning or end
+
+```php
+use Arifszn\AdvancedValidation\Rules\Username;
+
+public function rules()
+{
+    return [
+        'username' => [new Username()],
     ];
 }
 ```
