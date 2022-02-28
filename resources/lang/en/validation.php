@@ -14,5 +14,6 @@ return [
     'float_number' => 'The :attribute must be a float number',
     'image_url' => 'The :attribute must be a valid image URL.',
     'phone' => 'The :attribute must be a valid phone number.',
+    'username' => 'The :attribute must be a valid username.',
     'without_spaces' => 'The :attribute must not contain spaces.',
 ];
