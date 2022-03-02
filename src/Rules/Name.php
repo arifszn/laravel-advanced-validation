@@ -47,6 +47,11 @@ class Name implements Rule
      */
     public function passes($attribute, $value)
     {
+        // check empty
+        if (!trim($value)) {
+            return false;
+        }
+
         // check no emoji
         if (preg_match('/\p{S}/u', $value)) {
             return false;
