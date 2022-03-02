@@ -7,9 +7,9 @@ use Illuminate\Contracts\Validation\Rule;
 /**
  * The field under validation must be a valid name.
  *
- *  - at least one letter (a-z, A-Z)
  *  - no emoji
  *  - no number (if $allowNumber flag is false)
+ *  - special characters are allowed
  *
  * @package Arifszn\AdvancedValidation\Rules
  */
@@ -47,17 +47,12 @@ class Name implements Rule
      */
     public function passes($attribute, $value)
     {
-        // check at least one letter (a-z, A-Z)
-        if (!preg_match('/[A-Za-z]+/', $value)) {
-            return false;
-        }
-
         // check no emoji
         if (preg_match('/\p{S}/u', $value)) {
             return false;
         }
 
-        if ($this->allowNumber && !preg_match('/^([^0-9]*)$/', $value)) {
+        if (!$this->allowNumber && !preg_match('/^([^0-9]*)$/', $value)) {
             return false;
         }
 
