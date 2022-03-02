@@ -28,7 +28,8 @@ class NameTest extends TestCase
         return array_merge($this->shared(), [
             [false, '1234 abc DEF'],
             [false, '1234abcDEF'],
-            [false, '消极的123'],
+            [false, '123'],
+            [false, '李小龍123'],
         ]);
     }
 
@@ -37,19 +38,21 @@ class NameTest extends TestCase
         return array_merge($this->shared(), [
             [true, '1234 abc DEF'],
             [true, '1234abcDEF'],
-            [true, '消极的123'],
+            [true, '123'],
+            [true, '李小龍123'],
         ]);
     }
 
     private function shared()
     {
         return [
-            [true, 'foobar'],
-            [true, 'ｆｏｏbar'],
-            [true, 'a'],
-            [true, '消极的'],
-            [true, '###'],
-            [true, '**'],
+            [true, 'John Doe'],
+            [true, 'john doe'],
+            [true, 'j'],
+            [true, 'john'],
+            [true, 'Md. Ariful Alam'],
+            [true, 'Martin Luther King, Jr.'],
+            [true, '李小龍'],
             [false, '😀'],
             [false, 'john 😀'],
             [false, ''],
