@@ -43,6 +43,9 @@ class UsernameTest extends TestCase
             [false, 'a b c'],
             [false, 'ｆｏｏbar'],
             [false, '😀'],
+            [false, 'john😀'],
+            [false, ''],
+            [false, '  '],
         ];
     }
 }

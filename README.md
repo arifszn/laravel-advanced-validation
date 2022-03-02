@@ -54,6 +54,7 @@ public function rules()
 - [`Float Number`](#floatnumber)
 - [`Hash`](#hash)
 - [`Image URL`](#imageurl)
+- [`Name`](#name)
 - [`Phone`](#phone)
 - [`Username`](#username)
 - [`Without Spaces`](#withoutspaces)
@@ -263,6 +264,27 @@ public function rules()
 {
     return [
         'avatar' => [new ImageURL()],
+    ];
+}
+```
+
+### `Name`
+
+The field under validation must be a valid name.
+
+- no emoji
+- no number (if $allowNumber flag is true, it will accept numbers, default is false)
+- special characters are allowed
+
+    public Arifszn\AdvancedValidation\Rules\Name::__construct(bool $allowNumber = false, string $errorMessage = null)
+
+```php
+use Arifszn\AdvancedValidation\Rules\Name;
+
+public function rules()
+{
+    return [
+        'name' => [new Name()],
     ];
 }
 ```
