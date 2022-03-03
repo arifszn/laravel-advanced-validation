@@ -30,12 +30,12 @@ php artisan vendor:publish --provider="Arifszn\AdvancedValidation\ServiceProvide
 You can specify the error message on the fly when declaring the rules. Simple pass the error message parameter.
 
 ```php
-use Arifszn\AdvancedValidation\Rules\Base64Image;
+use Arifszn\AdvancedValidation\Rules\Username;
 
 public function rules()
 {
     return [
-        'avatar' => [new Base64Image('Your custom error message')],
+        'foo' => [new Username('Your custom error message')],
     ];
 }
 ```
@@ -52,14 +52,22 @@ public function rules()
 - [`Divisible By`](#divisibleby)
 - [`Ethereum Address`](#ethereumaddress)
 - [`Float Number`](#floatnumber)
+- [`Hash`](#hash)
 - [`Image URL`](#imageurl)
+- [`JWT`](#jwt)
+- [`Name`](#name)
 - [`Phone`](#phone)
+- [`Username`](#username)
 - [`Without Spaces`](#withoutspaces)
 
 
 ### `Ascii`
 
 The field under validation must contain ASCII chars only.
+
+```
+public Arifszn\AdvancedValidation\Rules\Ascii::__construct(string $errorMessage = null)
+```
 
 ```php
 use Arifszn\AdvancedValidation\Rules\Ascii;
@@ -76,6 +84,10 @@ public function rules()
 
 The field under validation must be a Base64 encoded image.
 
+```
+public Arifszn\AdvancedValidation\Rules\Base64Image::__construct(string $errorMessage = null)
+```
+
 ```php
 use Arifszn\AdvancedValidation\Rules\Base64Image;
 
@@ -90,6 +102,10 @@ public function rules()
 ### `Base64String`
 
 The field under validation must be a Base64 encoded string.
+
+```
+public Arifszn\AdvancedValidation\Rules\Base64String::__construct(string $errorMessage = null)
+```
 
 ```php
 use Arifszn\AdvancedValidation\Rules\Base64String;
@@ -106,6 +122,10 @@ public function rules()
 
 The field under validation must be a BIC([Business Identifier Code](https://en.wikipedia.org/wiki/ISO_9362)) or SWIFT code.
 
+```
+public Arifszn\AdvancedValidation\Rules\BIC::__construct(string $errorMessage = null)
+```
+
 ```php
 use Arifszn\AdvancedValidation\Rules\BIC;
 
@@ -120,6 +140,10 @@ public function rules()
 ### `BtcAddress`
 
 The field under validation must be a valid BTC address.
+
+```
+public Arifszn\AdvancedValidation\Rules\BtcAddress::__construct(string $errorMessage = null)
+```
 
 ```php
 use Arifszn\AdvancedValidation\Rules\BtcAddress;
@@ -136,6 +160,10 @@ public function rules()
 
 The field under validation must be a valid credit card number.
 
+```
+public Arifszn\AdvancedValidation\Rules\CreditCard::__construct(string $errorMessage = null)
+```
+
 ```php
 use Arifszn\AdvancedValidation\Rules\CreditCard;
 
@@ -150,6 +178,10 @@ public function rules()
 ### `DataURI`
 
 The field under validation must have [data uri format](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs).
+
+```
+public Arifszn\AdvancedValidation\Rules\DataURI::__construct(string $errorMessage = null)
+```
 
 ```php
 use Arifszn\AdvancedValidation\Rules\DataURI;
@@ -166,6 +198,10 @@ public function rules()
 
 The field under validation must be divisible by the given number.
 
+```
+public Arifszn\AdvancedValidation\Rules\DivisibleBy::__construct(int $number, string $errorMessage = null)
+```
+
 ```php
 use Arifszn\AdvancedValidation\Rules\DivisibleBy;
 
@@ -179,6 +215,10 @@ public function rules()
 
 ### `EthereumAddress`
 The field under validation must be an [Ethereum](https://ethereum.org/en/) address. Does not validate address checksums.
+
+```
+public Arifszn\AdvancedValidation\Rules\EthereumAddress::__construct(string $errorMessage = null)
+```
 
 ```php
 use Arifszn\AdvancedValidation\Rules\EthereumAddress;
@@ -195,6 +235,10 @@ public function rules()
 
 The field under validation must be a float number.
 
+```
+public Arifszn\AdvancedValidation\Rules\FloatNumber::__construct(string $errorMessage = null)
+```
+
 ```php
 use Arifszn\AdvancedValidation\Rules\FloatNumber;
 
@@ -206,12 +250,37 @@ public function rules()
 }
 ```
 
+### `Hash`
+
+The field under validation must be a hash of type algorithm.
+
+Algorithm is one of `'md4', 'md5', 'sha1', 'sha256', 'sha384', 'sha512', 'ripemd128', 'ripemd160', 'tiger128', 'tiger160', 'tiger192', 'crc32', 'crc32b'`.
+
+```
+public Arifszn\AdvancedValidation\Rules\Hash::__construct(string $algorithm, string $errorMessage = null)
+```
+
+```php
+use Arifszn\AdvancedValidation\Rules\Hash;
+
+public function rules()
+{
+    return [
+        'foo' => [new Hash('md4')],
+    ];
+}
+```
+
 ### `ImageURL`
 
 The field under validation must be a valid image URL.
 
 ✓ https://www.php.net/images/logos/php-logo.png \
 ✕ https://imaginarysite123.com/invalid.png
+
+```
+public Arifszn\AdvancedValidation\Rules\ImageURL::__construct(string $errorMessage = null)
+```
 
 ```php
 use Arifszn\AdvancedValidation\Rules\ImageURL;
@@ -220,6 +289,48 @@ public function rules()
 {
     return [
         'avatar' => [new ImageURL()],
+    ];
+}
+```
+
+### `JWT`
+
+The field under validation must have a valid format of JWT ([JSON Web Token](https://en.wikipedia.org/wiki/JSON_Web_Token)).
+
+```
+public Arifszn\AdvancedValidation\Rules\Jwt::__construct(string $errorMessage = null)
+```
+
+```php
+use Arifszn\AdvancedValidation\Rules\Jwt;
+
+public function rules()
+{
+    return [
+        'foo' => [new Jwt()],
+    ];
+}
+```
+
+### `Name`
+
+The field under validation must be a valid name.
+
+- no emoji
+- no number (if $allowNumber flag is true, it will accept numbers, default is false)
+- special characters are allowed (restricting special characters will cause false-negative for names like `Martin Luther King, Jr.` or `李小龍`)
+
+```
+public Arifszn\AdvancedValidation\Rules\Name::__construct(bool $allowNumber = false, string $errorMessage = null)
+```
+
+```php
+use Arifszn\AdvancedValidation\Rules\Name;
+
+public function rules()
+{
+    return [
+        'name' => [new Name()],
     ];
 }
 ```
@@ -233,6 +344,10 @@ The field under validation must be a valid phone number.
 ✓ (xxx) xxx-xxxx \
 ✓ xxxxxxxxxx
 
+```
+public Arifszn\AdvancedValidation\Rules\Phone::__construct(string $errorMessage = null)
+```
+
 ```php
 use Arifszn\AdvancedValidation\Rules\Phone;
 
@@ -244,9 +359,37 @@ public function rules()
 }
 ```
 
+### `Username`
+
+The field under validation must be a valid username.
+
+- starts with a letter (alpha)
+- only alpha-numeric (a-z, A-Z, 0-9), underscore, minus and dot
+- multiple underscores, minus and are not allowed (-- or __ or ..)
+- underscores, minus and dot are not allowed at the beginning or end
+
+```
+public Arifszn\AdvancedValidation\Rules\Username::__construct(string $errorMessage = null)
+```
+
+```php
+use Arifszn\AdvancedValidation\Rules\Username;
+
+public function rules()
+{
+    return [
+        'username' => [new Username()],
+    ];
+}
+```
+
 ### `WithoutSpaces`
 
 The field under validation must not contain spaces.
+
+```
+public Arifszn\AdvancedValidation\Rules\WithoutSpaces::__construct(string $errorMessage = null)
+```
 
 ```php
 use Arifszn\AdvancedValidation\Rules\WithoutSpaces;

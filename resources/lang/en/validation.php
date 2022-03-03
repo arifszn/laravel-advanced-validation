@@ -1,4 +1,3 @@
-
 <?php
 
 return [
@@ -11,8 +10,12 @@ return [
     'data_uri' => 'The :attribute must have data uri format.',
     'divisible_by' => 'The :attribute must be divisible by :number.',
     'ethereum_address' => 'The :attribute must be an Ethereum address.',
-    'float_number' => 'The :attribute must be a float number',
+    'float_number' => 'The :attribute must be a float number.',
+    'hash' => 'The :attribute must be a hash of :algorithm algorithm.',
     'image_url' => 'The :attribute must be a valid image URL.',
+    'jwt' => 'The :attribute must have a valid format of JWT.',
+    'name' => 'The :attribute must be a valid name.',
     'phone' => 'The :attribute must be a valid phone number.',
+    'username' => 'The :attribute must be a valid username.',
     'without_spaces' => 'The :attribute must not contain spaces.',
 ];
