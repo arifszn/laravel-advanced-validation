@@ -54,6 +54,7 @@ public function rules()
 - [`Float Number`](#floatnumber)
 - [`Hash`](#hash)
 - [`Image URL`](#imageurl)
+- [`JWT`](#jwt)
 - [`Name`](#name)
 - [`Phone`](#phone)
 - [`Username`](#username)
@@ -288,6 +289,25 @@ public function rules()
 {
     return [
         'avatar' => [new ImageURL()],
+    ];
+}
+```
+
+### `JWT`
+
+The field under validation must have a valid format of JWT ([JSON Web Token](https://en.wikipedia.org/wiki/JSON_Web_Token)).
+
+```
+public Arifszn\AdvancedValidation\Rules\Jwt::__construct(string $errorMessage = null)
+```
+
+```php
+use Arifszn\AdvancedValidation\Rules\Jwt;
+
+public function rules()
+{
+    return [
+        'foo' => [new Jwt()],
     ];
 }
 ```
