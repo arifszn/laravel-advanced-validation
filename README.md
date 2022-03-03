@@ -30,12 +30,12 @@ php artisan vendor:publish --provider="Arifszn\AdvancedValidation\ServiceProvide
 You can specify the error message on the fly when declaring the rules. Simple pass the error message parameter.
 
 ```php
-use Arifszn\AdvancedValidation\Rules\Base64Image;
+use Arifszn\AdvancedValidation\Rules\Username;
 
 public function rules()
 {
     return [
-        'avatar' => [new Base64Image('Your custom error message')],
+        'foo' => [new Username('Your custom error message')],
     ];
 }
 ```
