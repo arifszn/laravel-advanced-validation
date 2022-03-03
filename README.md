@@ -30,12 +30,12 @@ php artisan vendor:publish --provider="Arifszn\AdvancedValidation\ServiceProvide
 You can specify the error message on the fly when declaring the rules. Simple pass the error message parameter.
 
 ```php
-use Arifszn\AdvancedValidation\Rules\Base64Image;
+use Arifszn\AdvancedValidation\Rules\Username;
 
 public function rules()
 {
     return [
-        'avatar' => [new Base64Image('Your custom error message')],
+        'foo' => [new Username('Your custom error message')],
     ];
 }
 ```
@@ -54,6 +54,7 @@ public function rules()
 - [`Float Number`](#floatnumber)
 - [`Hash`](#hash)
 - [`Image URL`](#imageurl)
+- [`JWT`](#jwt)
 - [`Name`](#name)
 - [`Phone`](#phone)
 - [`Username`](#username)
@@ -288,6 +289,25 @@ public function rules()
 {
     return [
         'avatar' => [new ImageURL()],
+    ];
+}
+```
+
+### `JWT`
+
+The field under validation must have a valid format of JWT ([JSON Web Token](https://en.wikipedia.org/wiki/JSON_Web_Token)).
+
+```
+public Arifszn\AdvancedValidation\Rules\Jwt::__construct(string $errorMessage = null)
+```
+
+```php
+use Arifszn\AdvancedValidation\Rules\Jwt;
+
+public function rules()
+{
+    return [
+        'foo' => [new Jwt()],
     ];
 }
 ```
