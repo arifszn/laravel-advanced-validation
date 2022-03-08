@@ -446,7 +446,9 @@ Any contributors who want to make this project better can make contributions, wh
 
 ## Support
 
-If you are using this package and happy with it or just want to encourage me to continue creating stuff, you can do it by just starring and sharing the project.
+<a href="https://www.buymeacoffee.com/arifszn" target="_blank">
+  <img src="https://raw.githubusercontent.com/arifszn/arifszn/main/assets/bmc-button.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" >
+</a>
 
 
 ## License
