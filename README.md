@@ -317,7 +317,7 @@ public function rules()
 The field under validation must be a valid name.
 
 - no emoji
-- no number (if $allowNumber flag is true, it will accept numbers, default is false)
+- no number (if `$allowNumber` flag is true, it will accept numbers, default is false)
 - special characters are allowed (restricting special characters will cause false-negative for names like `Martin Luther King, Jr.` or `李小龍`)
 
 ```
